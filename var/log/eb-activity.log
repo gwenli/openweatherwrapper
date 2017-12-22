@@ -1,0 +1,317 @@
+[2017-09-25T16:05:51.663Z] INFO  [2799]  - [Initialization] : Starting activity...
+[2017-09-25T16:05:51.664Z] INFO  [2799]  - [Initialization/AddonsBefore] : Starting activity...
+[2017-09-25T16:05:51.664Z] INFO  [2799]  - [Initialization/AddonsBefore/InstallCWLAgent] : Starting activity...
+[2017-09-25T16:05:51.664Z] INFO  [2799]  - [Initialization/AddonsBefore/InstallCWLAgent/01-install-cwl-agent.sh] : Starting activity...
+[2017-09-25T16:05:53.656Z] INFO  [2799]  - [Initialization/AddonsBefore/InstallCWLAgent/01-install-cwl-agent.sh] : Completed activity. Result:
+  + grep -iq 'Amazon Linux' /etc/issue
+  + yum install -y awslogs
+  Loaded plugins: priorities, update-motd, upgrade-helper
+  Repodata is over 2 weeks old. Install yum-cron? Or run: yum makecache fast
+  Resolving Dependencies
+  --> Running transaction check
+  ---> Package awslogs.noarch 0:1.1.2-1.10.amzn1 will be installed
+  --> Processing Dependency: aws-cli-plugin-cloudwatch-logs(python27) for package: awslogs-1.1.2-1.10.amzn1.noarch
+  --> Running transaction check
+  ---> Package aws-cli-plugin-cloudwatch-logs.noarch 0:1.3.3-1.15.amzn1 will be installed
+  --> Finished Dependency Resolution
+  
+  Dependencies Resolved
+  
+  ================================================================================
+   Package                          Arch     Version            Repository   Size
+  ================================================================================
+  Installing:
+   awslogs                          noarch   1.1.2-1.10.amzn1   amzn-main   8.8 k
+  Installing for dependencies:
+   aws-cli-plugin-cloudwatch-logs   noarch   1.3.3-1.15.amzn1   amzn-main    69 k
+  
+  Transaction Summary
+  ================================================================================
+  Install  1 Package (+1 Dependent package)
+  
+  Total download size: 78 k
+  Installed size: 240 k
+  Downloading packages:
+  --------------------------------------------------------------------------------
+  Total                                              831 kB/s |  78 kB  00:00     
+  Running transaction check
+  Running transaction test
+  Transaction test succeeded
+  Running transaction
+    Installing : aws-cli-plugin-cloudwatch-logs-1.3.3-1.15.amzn1.noarch       1/2 
+    Installing : awslogs-1.1.2-1.10.amzn1.noarch                              2/2 
+    Verifying  : awslogs-1.1.2-1.10.amzn1.noarch                              1/2 
+    Verifying  : aws-cli-plugin-cloudwatch-logs-1.3.3-1.15.amzn1.noarch       2/2 
+  
+  Installed:
+    awslogs.noarch 0:1.1.2-1.10.amzn1                                             
+  
+  Dependency Installed:
+    aws-cli-plugin-cloudwatch-logs.noarch 0:1.3.3-1.15.amzn1                      
+  
+  Complete!
+  + cat
+  ++ sed 's/.$//'
+  ++ curl 169.254.169.254/latest/meta-data/placement/availability-zone
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+    0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    13  100    13    0     0  10252      0 --:--:-- --:--:-- --:--:-- 13000
+  + region=ca-central-1
+  + sed -i -e 's/region = us-east-1/region = ca-central-1/g' /etc/awslogs/awscli.conf
+  + /opt/elasticbeanstalk/bin/log-conf -n awslogs -l/var/log/awslogs.log
+[2017-09-25T16:05:53.656Z] INFO  [2799]  - [Initialization/AddonsBefore/InstallCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/install.
+[2017-09-25T16:05:53.656Z] INFO  [2799]  - [Initialization/AddonsBefore] : Completed activity.
+[2017-09-25T16:05:53.656Z] INFO  [2799]  - [Initialization/PreInitStage0] : Starting activity...
+[2017-09-25T16:05:53.657Z] INFO  [2799]  - [Initialization/PreInitStage0/DownloadSourceBundle] : Starting activity...
+[2017-09-25T16:05:54.090Z] INFO  [2799]  - [Initialization/PreInitStage0/DownloadSourceBundle] : Completed activity. Result:
+  [2017-09-25T16:05:53.753Z] INFO  [2869]  : Application version will be saved to /opt/elasticbeanstalk/deploy/appsource.
+  [2017-09-25T16:05:53.753Z] INFO  [2869]  : Using manifest cache with deployment ID 1 and serial 1.
+  [2017-09-25T16:05:53.753Z] INFO  [2869]  : Attempting to download application source bundle to: '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2017-09-25T16:05:53.753Z] INFO  [2869]  : Using computed s3 key.
+  [2017-09-25T16:05:53.862Z] INFO  [2869]  : Downloading from bucket 'elasticbeanstalk-ca-central-1-258687909003' with key 'resources/environments/e-xn2muhxawc/_runtime/_versions/Open Weather API Wrapper/open weather api wrapper-source' and version '' to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+  [2017-09-25T16:05:53.910Z] INFO  [2869]  : Size: 15153952, ETag: "5a30435cac51da03625744167641c1ca", Metadata: {"environmentid"=>"e-xn2muhxawc", "requestid"=>"40f88c1f-a20b-11e7-bfe2-9baf13479c04"}.
+  [2017-09-25T16:05:54.082Z] INFO  [2869]  : Downloaded size: 15153952.
+  [2017-09-25T16:05:54.082Z] INFO  [2869]  : Successfully downloaded to '/opt/elasticbeanstalk/deploy/appsource/source_bundle'.
+[2017-09-25T16:05:54.090Z] INFO  [2799]  - [Initialization/PreInitStage0/PreInitHook] : Starting activity...
+[2017-09-25T16:05:54.090Z] INFO  [2799]  - [Initialization/PreInitStage0/PreInitHook/01_install_dependencies.sh] : Starting activity...
+[2017-09-25T16:05:54.172Z] INFO  [2799]  - [Initialization/PreInitStage0/PreInitHook/01_install_dependencies.sh] : Completed activity.
+[2017-09-25T16:05:54.172Z] INFO  [2799]  - [Initialization/PreInitStage0/PreInitHook/01_install_procfile.sh] : Starting activity...
+[2017-09-25T16:05:54.253Z] INFO  [2799]  - [Initialization/PreInitStage0/PreInitHook/01_install_procfile.sh] : Completed activity.
+[2017-09-25T16:05:54.253Z] INFO  [2799]  - [Initialization/PreInitStage0/PreInitHook/01_install_proxy.sh] : Starting activity...
+[2017-09-25T16:05:54.335Z] INFO  [2799]  - [Initialization/PreInitStage0/PreInitHook/01_install_proxy.sh] : Completed activity.
+[2017-09-25T16:05:54.335Z] INFO  [2799]  - [Initialization/PreInitStage0/PreInitHook/01_install_xray_daemon.sh] : Starting activity...
+[2017-09-25T16:05:54.435Z] INFO  [2799]  - [Initialization/PreInitStage0/PreInitHook/01_install_xray_daemon.sh] : Completed activity. Result:
+  Executing: /bin/chown -R xray:xray /var/log/xray
+  
+[2017-09-25T16:05:54.435Z] INFO  [2799]  - [Initialization/PreInitStage0/PreInitHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/preinit.
+[2017-09-25T16:05:54.435Z] INFO  [2799]  - [Initialization/PreInitStage0] : Completed activity. Result:
+  Initialization - Command CMD-PreInit stage 0 completed
+[2017-09-25T16:05:54.435Z] INFO  [2799]  - [Initialization/AddonsAfter] : Starting activity...
+[2017-09-25T16:05:54.435Z] INFO  [2799]  - [Initialization/AddonsAfter] : Completed activity.
+[2017-09-25T16:05:54.435Z] INFO  [2799]  - [Initialization] : Completed activity. Result:
+  Initialization - Command CMD-PreInit succeeded
+[2017-09-25T16:06:59.486Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1] : Starting activity...
+[2017-09-25T16:06:59.486Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/AddonsBefore] : Starting activity...
+[2017-09-25T16:06:59.486Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/AddonsBefore/ConfigCWLAgent] : Starting activity...
+[2017-09-25T16:06:59.486Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/AddonsBefore/ConfigCWLAgent/10-config.sh] : Starting activity...
+[2017-09-25T16:06:59.596Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/AddonsBefore/ConfigCWLAgent/10-config.sh] : Completed activity. Result:
+  Log streaming option setting is not specified, ignore cloudwatch logs setup.
+  
+  Disabled log streaming.
+[2017-09-25T16:06:59.596Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/AddonsBefore/ConfigCWLAgent] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logstreaming/hooks/config.
+[2017-09-25T16:06:59.596Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/AddonsBefore] : Completed activity.
+[2017-09-25T16:06:59.836Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0] : Starting activity...
+[2017-09-25T16:06:59.836Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/HealthdLogRotation] : Starting activity...
+[2017-09-25T16:06:59.841Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/HealthdLogRotation] : Completed activity. Result:
+  ["/etc/cron.hourly/cron.logrotate.elasticbeanstalk.healthd.conf"]
+[2017-09-25T16:06:59.841Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/HealthdHTTPDLogging] : Starting activity...
+[2017-09-25T16:06:59.841Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/HealthdHTTPDLogging] : Completed activity.
+[2017-09-25T16:06:59.841Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/HealthdNginxLogging] : Starting activity...
+[2017-09-25T16:06:59.841Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/HealthdNginxLogging] : Completed activity.
+[2017-09-25T16:06:59.841Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/EbExtensionPreBuild] : Starting activity...
+[2017-09-25T16:07:00.090Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Starting activity...
+[2017-09-25T16:07:00.090Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/EbExtensionPreBuild/Infra-EmbeddedPreBuild] : Completed activity.
+[2017-09-25T16:07:00.102Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/EbExtensionPreBuild] : Completed activity.
+[2017-09-25T16:07:00.102Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/AppDeployPreHook] : Starting activity...
+[2017-09-25T16:07:00.102Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/AppDeployPreHook/01_configure_application.sh] : Starting activity...
+[2017-09-25T16:07:00.632Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/AppDeployPreHook/01_configure_application.sh] : Completed activity. Result:
+  Executing: /usr/bin/unzip -o -d /var/app/staging /opt/elasticbeanstalk/deploy/appsource/source_bundle
+  Archive:  /opt/elasticbeanstalk/deploy/appsource/source_bundle
+     creating: /var/app/staging/META-INF/
+    inflating: /var/app/staging/META-INF/MANIFEST.MF  
+     creating: /var/app/staging/WEB-INF/
+     creating: /var/app/staging/WEB-INF/classes/
+     creating: /var/app/staging/WEB-INF/classes/controllers/
+    inflating: /var/app/staging/WEB-INF/classes/controllers/Application.class  
+    inflating: /var/app/staging/WEB-INF/classes/controllers/EndpointsController.class  
+    inflating: /var/app/staging/WEB-INF/classes/controllers/RequestController.class  
+     creating: /var/app/staging/WEB-INF/lib/
+   extracting: /var/app/staging/WEB-INF/lib/spring-boot-starter-actuator-1.5.7.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-oxm-4.3.9.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-boot-starter-web-1.5.7.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/json-20090211.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-boot-starter-1.5.7.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-boot-actuator-1.5.7.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-beans-4.3.11.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-core-4.3.11.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-boot-starter-tomcat-1.5.7.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/hibernate-validator-5.3.5.Final.jar  
+   extracting: /var/app/staging/WEB-INF/lib/jackson-databind-2.8.10.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-web-4.3.11.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-webmvc-4.3.11.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-boot-1.5.7.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-boot-autoconfigure-1.5.7.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-boot-starter-logging-1.5.7.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/snakeyaml-1.17.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-context-4.3.11.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/tomcat-embed-core-8.5.20.jar  
+   extracting: /var/app/staging/WEB-INF/lib/tomcat-embed-el-8.5.20.jar  
+   extracting: /var/app/staging/WEB-INF/lib/tomcat-embed-websocket-8.5.20.jar  
+   extracting: /var/app/staging/WEB-INF/lib/validation-api-1.1.0.Final.jar  
+   extracting: /var/app/staging/WEB-INF/lib/jboss-logging-3.3.1.Final.jar  
+   extracting: /var/app/staging/WEB-INF/lib/classmate-1.3.4.jar  
+   extracting: /var/app/staging/WEB-INF/lib/jackson-annotations-2.8.0.jar  
+   extracting: /var/app/staging/WEB-INF/lib/jackson-core-2.8.10.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-aop-4.3.11.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/spring-expression-4.3.11.RELEASE.jar  
+   extracting: /var/app/staging/WEB-INF/lib/logback-classic-1.1.11.jar  
+   extracting: /var/app/staging/WEB-INF/lib/jcl-over-slf4j-1.7.25.jar  
+   extracting: /var/app/staging/WEB-INF/lib/jul-to-slf4j-1.7.25.jar  
+   extracting: /var/app/staging/WEB-INF/lib/log4j-over-slf4j-1.7.25.jar  
+   extracting: /var/app/staging/WEB-INF/lib/logback-core-1.1.11.jar  
+   extracting: /var/app/staging/WEB-INF/lib/slf4j-api-1.7.25.jar  
+     creating: /var/app/staging/org/
+     creating: /var/app/staging/org/springframework/
+     creating: /var/app/staging/org/springframework/boot/
+     creating: /var/app/staging/org/springframework/boot/loader/
+    inflating: /var/app/staging/org/springframework/boot/loader/LaunchedURLClassLoader$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$ArchiveEntryFilter.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$PrefixMatchingArchiveFilter.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/Launcher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/ExecutableArchiveLauncher$1.class  
+     creating: /var/app/staging/org/springframework/boot/loader/jar/
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/Handler.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarEntry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$3.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryEndRecord.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryVisitor.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$JarFileType.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFile$2.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarEntryFilter.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/AsciiBytes.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryParser.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/Bytes.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/ZipInflaterInputStream.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarFileEntries$EntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/FileHeader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection$JarEntryName.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/JarURLConnection.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/jar/CentralDirectoryFileHeader.class  
+     creating: /var/app/staging/org/springframework/boot/loader/data/
+    inflating: /var/app/staging/org/springframework/boot/loader/data/ByteArrayRandomAccessData.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$DataInputStream.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile$FilePool.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessData$ResourceAccess.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessDataFile.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/data/RandomAccessData.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/LaunchedURLClassLoader.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/JarLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/MainMethodRunner.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/ExecutableArchiveLauncher.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/WarLauncher.class  
+     creating: /var/app/staging/org/springframework/boot/loader/archive/
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive$EntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntryIterator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive$JarFileEntry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive$Entry.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/JarFileArchive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$FileEntryIterator$EntryComparator.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/Archive$EntryFilter.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/archive/ExplodedArchive$1.class  
+    inflating: /var/app/staging/org/springframework/boot/loader/PropertiesLauncher.class  
+     creating: /var/app/staging/org/springframework/boot/loader/util/
+    inflating: /var/app/staging/org/springframework/boot/loader/util/SystemPropertyUtils.class  
+  Executing: HOME=/tmp /opt/elasticbeanstalk/lib/ruby/bin/ruby /opt/elasticbeanstalk/lib/ruby/bin/foreman export supervisord --procfile /var/app/staging/Procfile --root /var/app/current --app application --log /var/log/ --user webapp --template /opt/elasticbeanstalk/private/config/foreman/supervisord --env /var/elasticbeanstalk/staging/elasticbeanstalk.env /var/elasticbeanstalk/staging/supervisor
+  [foreman export] writing: application.conf
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n supervisor -l'/var/log/supervisord.log' -t bundlelogs
+  
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n containerlistener -l'/var/log/eb-container-listener.log' -t bundlelogs
+  
+[2017-09-25T16:07:00.632Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/AppDeployPreHook/01_configure_xray.sh] : Starting activity...
+[2017-09-25T16:07:00.731Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/AppDeployPreHook/01_configure_xray.sh] : Completed activity.
+[2017-09-25T16:07:00.732Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/AppDeployPreHook/03_configure_proxy.sh] : Starting activity...
+[2017-09-25T16:07:00.898Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/AppDeployPreHook/03_configure_proxy.sh] : Completed activity. Result:
+  Executing: /opt/elasticbeanstalk/bin/log-conf -n nginx -l'/var/log/nginx/*'
+  
+  Executing: /usr/sbin/nginx -t -c /var/elasticbeanstalk/staging/nginx/nginx.conf
+  nginx: the configuration file /var/elasticbeanstalk/staging/nginx/nginx.conf syntax is ok
+  nginx: configuration file /var/elasticbeanstalk/staging/nginx/nginx.conf test is successful
+[2017-09-25T16:07:00.898Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/AppDeployPreHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/pre.
+[2017-09-25T16:07:00.898Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/EbExtensionPostBuild] : Starting activity...
+[2017-09-25T16:07:01.102Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Starting activity...
+[2017-09-25T16:07:01.102Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/EbExtensionPostBuild/Infra-EmbeddedPostBuild] : Completed activity.
+[2017-09-25T16:07:01.112Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/EbExtensionPostBuild] : Completed activity.
+[2017-09-25T16:07:01.113Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/InfraCleanEbExtension] : Starting activity...
+[2017-09-25T16:07:01.113Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0/InfraCleanEbExtension] : Completed activity. Result:
+  Cleaned ebextensions subdirectories from /var/app/staging.
+[2017-09-25T16:07:01.113Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage0] : Completed activity. Result:
+  Application deployment - Command CMD-Startup stage 0 completed
+[2017-09-25T16:07:01.113Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1] : Starting activity...
+[2017-09-25T16:07:01.113Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook] : Starting activity...
+[2017-09-25T16:07:01.114Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/01_stop_before_promote.sh] : Starting activity...
+[2017-09-25T16:07:01.384Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/01_stop_before_promote.sh] : Completed activity. Result:
+  Executing: /usr/local/bin/supervisorctl -c /etc/supervisor/supervisord.conf stop application:*
+  unix:///tmp/supervisor.sock no such file
+  Executing: /usr/local/bin/supervisorctl -c /etc/supervisor/supervisord.conf stop all
+  unix:///tmp/supervisor.sock no such file
+  Executing: /sbin/status supervisord
+  supervisord stop/waiting
+[2017-09-25T16:07:01.384Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/01stop_xray.sh] : Starting activity...
+[2017-09-25T16:07:03.509Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/01stop_xray.sh] : Completed activity. Result:
+  Executing: if ( initctl status xray | grep start ); then initctl stop xray; fi
+  xray start/running, process 2240
+  xray stop/waiting
+[2017-09-25T16:07:03.509Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/02start_xray.sh] : Starting activity...
+[2017-09-25T16:07:03.608Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/02start_xray.sh] : Completed activity.
+[2017-09-25T16:07:03.608Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/03_stop_proxy.sh] : Starting activity...
+[2017-09-25T16:07:03.709Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/03_stop_proxy.sh] : Completed activity. Result:
+  Executing: service nginx stop
+  
+[2017-09-25T16:07:03.709Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/05_promote_application.sh] : Starting activity...
+[2017-09-25T16:07:03.800Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/05_promote_application.sh] : Completed activity.
+[2017-09-25T16:07:03.801Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/07_start_application.sh] : Starting activity...
+[2017-09-25T16:07:03.899Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/07_start_application.sh] : Completed activity. Result:
+  Executing: /sbin/start supervisord
+  supervisord start/running, process 3189
+[2017-09-25T16:07:03.899Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/09_start_proxy.sh] : Starting activity...
+[2017-09-25T16:07:06.303Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/09_start_proxy.sh] : Completed activity. Result:
+  Executing: service nginx stop
+  
+  Executing: service nginx start
+  Starting nginx: [  OK  ]
+  Executing: /opt/elasticbeanstalk/bin/healthd-track-pidfile --proxy nginx
+  
+  Executing: /opt/elasticbeanstalk/bin/healthd-configure --appstat-log-path /var/log/nginx/healthd/application.log --appstat-unit sec --appstat-timestamp-on 'completion'
+  
+  Executing: /opt/elasticbeanstalk/bin/healthd-restart
+  
+[2017-09-25T16:07:06.303Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/11_stop_after_promote.sh] : Starting activity...
+[2017-09-25T16:07:06.873Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook/11_stop_after_promote.sh] : Completed activity.
+[2017-09-25T16:07:06.873Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployEnactHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/enact.
+[2017-09-25T16:07:06.873Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployPostHook] : Starting activity...
+[2017-09-25T16:07:06.873Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/AppDeployPostHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/appdeploy/post.
+[2017-09-25T16:07:06.873Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/PostInitHook] : Starting activity...
+[2017-09-25T16:07:06.873Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1/PostInitHook] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/hooks/postinit.
+[2017-09-25T16:07:06.873Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/StartupStage1] : Completed activity. Result:
+  Application deployment - Command CMD-Startup stage 1 completed
+[2017-09-25T16:07:06.873Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/AddonsAfter] : Starting activity...
+[2017-09-25T16:07:06.873Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/AddonsAfter/ConfigLogRotation] : Starting activity...
+[2017-09-25T16:07:06.874Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/AddonsAfter/ConfigLogRotation/10-config.sh] : Starting activity...
+[2017-09-25T16:07:07.389Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/AddonsAfter/ConfigLogRotation/10-config.sh] : Completed activity. Result:
+  Disabled forced hourly log rotation.
+[2017-09-25T16:07:07.389Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/AddonsAfter/ConfigLogRotation] : Completed activity. Result:
+  Successfully execute hooks in directory /opt/elasticbeanstalk/addons/logpublish/hooks/config.
+[2017-09-25T16:07:07.389Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1/AddonsAfter] : Completed activity.
+[2017-09-25T16:07:07.389Z] INFO  [3015]  - [Application deployment open weather api wrapper-source@1] : Completed activity. Result:
+  Application deployment - Command CMD-Startup succeeded
+[2017-09-25T16:10:14.732Z] INFO  [3430]  - [CMD-BundleLogs] : Starting activity...
+[2017-09-25T16:10:14.732Z] INFO  [3430]  - [CMD-BundleLogs/AddonsBefore] : Starting activity...
+[2017-09-25T16:10:14.732Z] INFO  [3430]  - [CMD-BundleLogs/AddonsBefore] : Completed activity.
+[2017-09-25T16:10:14.732Z] INFO  [3430]  - [CMD-BundleLogs/BundleLogs] : Starting activity...
+[2017-09-25T16:10:14.732Z] INFO  [3430]  - [CMD-BundleLogs/BundleLogs/BundleLogs] : Starting activity...

@@ -1,0 +1,33 @@
+# Logfile created on 2017-09-25 16:05:50 +0000 by logger.rb/47272
+A, [2017-09-25T16:05:50.358817 #2713]   ANY -- : healthd daemon 1.0.3 initialized
+W, [2017-09-25T16:05:50.469607 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:05:55.469863 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:06:01.092257 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:06:06.092767 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:06:11.093091 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:06:16.093375 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:06:21.093651 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:06:26.093911 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:06:31.094259 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:06:36.094622 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:06:41.094938 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:06:46.095240 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:06:51.095586 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:06:56.095964 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:07:01.096219 #2713]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+A, [2017-09-25T16:07:07.777845 #3278]   ANY -- : healthd daemon 1.0.3 initialized
+W, [2017-09-25T16:07:07.918101 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:07:12.918330 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:07:17.918633 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:07:22.918872 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:07:27.919373 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:07:32.919663 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:07:37.919927 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:07:42.920219 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:07:47.920500 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:07:52.920757 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:07:57.921029 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:08:02.921295 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:08:07.921564 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:08:12.921851 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist
+W, [2017-09-25T16:08:17.922186 #3278]  WARN -- : log file "/var/log/nginx/healthd/application.log.2017-09-25-16" does not exist

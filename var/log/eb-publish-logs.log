@@ -1,0 +1,2 @@
+2017-09-25 16:10:01,656 [INFO] (3407 MainThread) [publishLogs.py-61] [root publishLogs main] Starting publish log task with batch id fc22a900-a20b-11e7-b03f-02670ab2d32e
+2017-09-25 16:10:01,658 [INFO] (3407 MainThread) [publishLogs.py-86] [root publishLogs main] Log publication is disabled
